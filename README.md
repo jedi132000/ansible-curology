@@ -45,8 +45,7 @@ This architecture deploys your container into its own VPC, inside a public facin
 2. Launch the [public facing service template](ansible-playbook ansible-cloudformation-service.yml  --vault-id @prompt).
 
 
-### Access the nginx sevice at 
-![public subnet public load balancer](images/public-service-loadbalancer.png)
+
 
 
 
