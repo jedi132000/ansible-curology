@@ -3,10 +3,15 @@
   hosts: localhost
   vars_files: secret.yml
   tasks:
-     - name: Creating an ecs service using a cloudformation 
+     - name: Creating an ecs service using a cloudformation template
        cloudformation:
-        stack_name: "ansible-cloudformation"
+        stack_name: "ansible-ecs-service"
         state: present 
+        region: "us-east-2"
         aws_access_key: "{{ aws_access_key }}"
         aws_secret_key: "{{ aws_secret_key }}"
         template: "files/public-service.yml"
+        template_parameters: 
+           StackName: ansible-ecs-cluster
+           ImageUrl: "https://hub.docker.com/_/nginx"
+
