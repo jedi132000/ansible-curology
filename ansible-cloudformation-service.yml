@@ -1,0 +1,12 @@
+---
+- name: Creating  an ecs service on  AWS
+  hosts: localhost
+  vars_files: secret.yml
+  tasks:
+     - name: Creating an ecs service using a cloudformation 
+       cloudformation:
+        stack_name: "ansible-cloudformation"
+        state: present 
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+        template: "files/public-service.yml"

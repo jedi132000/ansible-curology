@@ -1,0 +1,16 @@
+---
+- name: Creating  an ecs nginx_cluster and service on  AWS
+  hosts: localhost
+  vars_files: secret.yml
+  tasks:
+
+    - name: Creating an ecs cluster using a clouformation template
+      cloudformation:
+        stack_name: "ansible-cloudformation"
+        state: "present"
+        region: "us-east-1"
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+        disable_rollback: true
+        template: "files/public-vpc.yml"
+
