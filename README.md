@@ -46,9 +46,9 @@ This architecture deploys your container into its own VPC, inside a public facin
 
 
 
-### Run on EC2
+### Access the nginx sevice at 
 
-1. Launch the [public facing, private subnet service template](EC2LaunchType/services/public-service.yml).
+1. (images/public-service-loadbalaner.png)
 
 
 
