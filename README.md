@@ -46,6 +46,7 @@ This architecture deploys your container into its own VPC, inside a public facin
 
 
 ### Access the nginx sevice at 
+![public subnet public load balancer](images/public-service-loadbalancer.png)
 
 
 
