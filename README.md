@@ -6,14 +6,15 @@ Getting started with ansible cloudformation module
 
 The below requirements are needed on the host that executes this module.
 
-boto
-boto3
-botocore>=1.5.45
-python >= 2.6
+1.boto
+2.boto3
+3.botocore>=1.5.45
+4.python >= 2.6
 
 # Setup ansible vault for your aws secrets and access keys
 
 ansible-vault create <name-of-file.yml>
+add your access and secret keys to the yml file.
 
 # Commands to run  the ECS-CLUSTER using your secrets
 
