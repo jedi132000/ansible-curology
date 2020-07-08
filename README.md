@@ -45,10 +45,13 @@ This architecture deploys your container into its own VPC, inside a public facin
 1. Launch the [fully public](ansible-playbook ansible-cloudformation-cluster.yml  --vault-id @prompt) 
 2. Launch the [public facing service template](ansible-playbook ansible-cloudformation-service.yml  --vault-id @prompt).
 
-### Service can be accessed 
 
+### Service can be accessed 
 Look up the Elastic Loadbalancer DNS under the EC2 service
 an DNS A record has been creted, kindly refer to the images.
+
+### Clean up
+Access cloudformation service and delete the service stack first and then the cluster created
 
 
 
