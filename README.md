@@ -26,19 +26,9 @@ ansible-playbook ansible-cloudformation-service.yml  --vault-id @prompt
 Several combinations of template are available in this folder. You can deploy containers with two different networking approaches:
 
 - Public VPC subnet with direct internet access
-- Private VPC subnet without direct internet access
-
-You can choose two different options for hosting the containers:
-
-- AWS Fargate for hands-off container execution without managing EC2 instances
-- Self managed cluster of EC2 hosts for control over instance type, or to use reserved or spot instances for savings
-
-You can also choose between two different ways of sending traffic to the container:
-
 - A public facing load balancer that accepts traffic from anyone on the internet (ideal for a public facing web service)
-- A private, internal load balancer that only accepts traffic from other containers in the cluster (ideal for a private, internal service).
 
-To use these templates launch a cluster template for the launch type and networking stack that you want. Then launch a service template for each service you want to run in the cluster. When launching a service template its important to make sure the "StackName" value is filled in with the same name that you selected for the name of your cluster stack.
+To use this template to launch a EC2 instance cluster  Then launch a service template for the EC2 Instance service you want to run in the cluster. When launching a service template its important to make sure the "StackName" value is filled in with the same name that you selected for the name of your cluster stack.
 
 Each of the service stacks has default values prefilled for launching a simple Nginx container, but can be adjusted to launch your own container.
 
@@ -51,8 +41,8 @@ This architecture deploys your container into its own VPC, inside a public facin
 
 ### Run on EC2
 
-1. Launch the [fully public](EC2LaunchType/clusters/public-vpc.yml) or the [public + private](EC2LaunchType/clusters/private-vpc.yml) cluster template
-2. Launch the [public facing service template](EC2LaunchType/services/public-service.yml).
+1. Launch the [fully public](ansible-playbook ansible-cloudformation-cluster.yml  --vault-id @prompt) 
+2. Launch the [public facing service template](ansible-playbook ansible-cloudformation-service.yml  --vault-id @prompt).
 
 
 
