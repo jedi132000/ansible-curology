@@ -53,6 +53,10 @@ a DNS A record has been created, kindly refer to the images.
 ### Clean up
 Access cloudformation service and delete the service stack first and then the cluster created
 
+### TODO
+Explore using ec2_elb_info  ansible module – Gather information about EC2 Elastic Load Balancers in AWS
+so we could display ELB info in the console
+
 
 
 
